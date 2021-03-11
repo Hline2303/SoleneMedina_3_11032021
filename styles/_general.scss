@@ -1,0 +1,149 @@
+main {
+	min-width: 320px;
+	width: 100%;
+    height: auto;
+	margin: 0 auto; 
+}
+
+body {
+	padding: 0;
+	margin: 0;
+    font-family: $txtFont;
+}
+
+h4 {
+    font-family: $titleFont;
+}
+
+header {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    & img { /* Centrage du logo */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 5% auto;
+    width: 150px;
+    color: white;
+    }
+}
+
+.search {
+    text-align: center;
+    font-size: 16px;
+    &__txt {
+    background-color: $mediumgrey;
+    padding: 5%;
+    box-sizing: border-box;
+    }
+    &__txt input {
+    width: 30%;
+    margin-left: 5%;
+    background-color: $mediumgrey;
+    border: 0; /* Cache la bordure de l'input */
+    }
+    &__txt--presentation {
+        background-color: $lightgrey;
+        padding: 5% 5% 12%;
+        & button {
+            width: 65%;
+            padding: 5%;
+            margin: 5%;
+            border: 0;
+            box-shadow: $shadow;
+            border-radius: 25px;
+            color: white;
+            background: linear-gradient($colorSecondary, $colorPrimary);
+        }
+    }
+}
+
+.help {
+    padding: 4%;
+    &__cards {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 25px;
+        font-size: 12px;
+        text-align: center;
+        background-color: $lightgrey;
+        border-radius: 20px;
+        padding: 3% 0;
+        margin: 5%;
+        box-shadow: $shadow;
+        & span {
+            left: 100%;
+        }
+        &--number {
+            padding: 1% 2%;
+            border-radius: 60%;
+            color: white;
+            background-color: $colorPrimary;
+        }
+        &:hover:not(p) {
+            background: #DBB8D5;
+            color: $colorPrimary;
+        }
+    }
+}
+
+.container {
+    background: $lightgrey;
+    padding: 5%;
+}
+.cards {
+    background: white;
+    border-radius: 25px;
+    gap: 25px;
+    &__img {
+    background-image: url(restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    border: 2px solid yellow;
+    background: pink;
+    }
+}
+
+.cards__img--4 {
+    
+    border: 2px solid yellow;
+    background-image: url(/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.img2 {
+    background-image: url(louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.img3 {
+    background-image: url();
+}
+
+.img4 {
+    background-image: url();
+}
+
+footer {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    .infos {
+        background: $grey;
+        color: white;
+        padding: 5%;
+        letter-spacing: 1px;
+        line-height: 30px;
+        h4 {
+        text-align: left;   
+        }
+        ul {
+        padding: 0;
+        list-style-type: none;
+        text-align: left;
+        span {
+            padding-right: 5%;
+        }
+        }
+    }
+}
