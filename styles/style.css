@@ -1,3 +1,4 @@
+/*****ATTENTION A L'ORDRE LE FICHIER STYLE VIENT APRES LES FONCTIONS SASS : MIXINS, VARIABLES, EXTEND....******/
 main {
   min-width: 320px;
   width: 100%;
@@ -20,6 +21,7 @@ header {
   margin: 0;
   padding: 0;
   height: 100%;
+  /*box-shadow: 0px 5px 5px 3px blue;*/
 }
 header img {
   /* Centrage du logo */
@@ -45,16 +47,14 @@ header span {
   font-size: 16px;
 }
 .search__txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #EAE8E8;
-  padding: 5%;
   box-sizing: border-box;
 }
-.search__txt input {
-  width: 30%;
-  margin-left: 5%;
-  background-color: #EAE8E8;
-  border: 0;
-  /* Cache la bordure de l'input */
+.search__txt p {
+  padding-left: 5%;
 }
 .search__txt--presentation {
   background-color: #f5f5f5;
@@ -73,78 +73,163 @@ header span {
 
 .help {
   padding: 4%;
+  margin-bottom: 14%;
 }
 .help__cards {
   display: flex;
-  justify-content: left;
   align-items: center;
-  gap: 25px;
-  font-size: 12px;
-  text-align: center;
-  background-color: #f5f5f5;
-  border-radius: 20px;
-  padding: 3% 0;
-  margin: 5%;
-  box-shadow: 0 7px 1px #EAE8E8;
-}
-.help__cards span {
-  left: 100%;
+  flex-wrap: wrap;
 }
 .help__cards--number {
   padding: 1% 2%;
   border-radius: 60%;
   color: white;
   background-color: #9356DC;
+  position: absolute;
+  z-index: 1;
 }
-.help__cards:hover:not(p) {
+.help__cards--icon1 {
+  margin: 0 2%;
+}
+.help__cards--icon2 {
+  margin: 0 1%;
+}
+.help__cards--bg {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  gap: 10%;
+  font-size: 14px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 3% 10%;
+  margin: 3% 3%;
+  box-shadow: 0 7px 1px #EAE8E8;
+}
+.help__cards--bg:hover {
   background: #DBB8D5;
+}
+.help__cards--bg:hover span {
   color: #9356DC;
 }
 
-.cards {
+.restos {
   background: #f5f5f5;
-  padding: 8%;
-  width: 100%;
+  padding: 8% 8% 24%;
   box-sizing: border-box;
   gap: 25px;
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
 }
-.cards__img {
-  background: white;
+.restos h2 {
+  margin: 10% 0 0;
+}
+.restos__cards {
+  box-shadow: 0 5px 18px #d8d7d7;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.restos__cards--img1 {
   border-radius: 25px 25px 0 0;
-  background-position: center;
   background-size: cover;
   overflow: hidden;
-  border: 3px solid purple;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cards__img--1 {
+  padding-bottom: 50%;
+  background-position: center bottom;
   background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  border: 3px solid yellow;
-  /*border-radius: 25px 25px 0 0;
-  transition-duration: .3s;
-  transition-timing-function: ease;  */
 }
-.cards__img--2 {
+.restos__cards--img1 span {
+  background-color: rgba(0, 255, 179, 0.979);
+  color: green;
+  font-size: 12px;
+  padding: 2%;
+  border-radius: 5%;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  /*box-shadow: 0 5px 18px #d8d7d7;
+  box-shadow: 0 0px 1px 0px; a voir plus tard */
+}
+.restos__cards--img2 {
+  border-radius: 25px 25px 0 0;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 50%;
+  background-position: center 62%;
   background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
 }
-.cards__img--3 {
+.restos__cards--img2 span {
+  background-color: rgba(0, 255, 179, 0.979);
+  color: green;
+  font-size: 12px;
+  padding: 2%;
+  border-radius: 5%;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  /*box-shadow: 0 5px 18px #d8d7d7;
+  box-shadow: 0 0px 1px 0px; a voir plus tard */
+}
+.restos__cards--img3 {
+  border-radius: 25px 25px 0 0;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 50%;
+  background-position: center bottom;
   background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
 }
-.cards__img--4 {
+.restos__cards--img4 {
+  border-radius: 25px 25px 0 0;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 50%;
+  background-position: center bottom;
   background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
-.cards a {
+.restos__cards a {
   text-decoration: none;
 }
-.cards__content {
+.restos__cards--content {
   background: white;
   border-radius: 0 0 25px 25px;
   color: black;
-  border: 3px solid orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5%;
+  line-height: normal;
+}
+.restos__cards--content h3, .restos__cards--content p {
+  margin: 0 0 2% 0;
+}
+.restos__cards--content span, .restos__cards--content i {
+  font-size: 25px;
+}
+.restos__cards--content span {
+  position: absolute;
+  background-color: white;
+}
+.restos__cards--content span:hover {
+  opacity: 0;
+  color: white;
+}
+.restos__cards--content i {
+  position: relative;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.restos__cards--hearts {
+  display: flex;
+}
+
+.img1 {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
 }
 
 footer {
@@ -156,12 +241,15 @@ footer {
 footer .infos {
   background: #2C2B2C;
   color: white;
-  padding: 5%;
+  padding: 5% 10%;
   letter-spacing: 1px;
   line-height: 30px;
+  border: 1px solid yellow;
 }
 footer .infos h4 {
+  margin-bottom: 0;
   text-align: left;
+  font-size: 18px;
 }
 footer .infos ul {
   padding: 0;
@@ -170,6 +258,14 @@ footer .infos ul {
 }
 footer .infos ul span {
   padding-right: 5%;
+}
+footer .infos .fa-utensils {
+  padding: 0 5% 0 0;
+}
+footer .infos .fa-hands-helping {
+  padding: 0 4% 0 0;
+  font-size: 12px;
+  rotate: -10deg;
 }
 
 /*******************************************************************************************/
@@ -202,8 +298,8 @@ footer .infos ul span {
 
 .menu__title {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 .menu__cards {
   background: white;
@@ -211,12 +307,11 @@ footer .infos ul span {
 }
 .menu__price {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 button {
-  /*@include btn;*/
   width: 65%;
   padding: 5%;
   margin: 5%;
