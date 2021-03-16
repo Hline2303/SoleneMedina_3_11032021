@@ -70,6 +70,9 @@ header span {
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
 }
+.search__txt--presentation button:hover {
+  cursor: pointer;
+}
 
 .help {
   padding: 4%;
@@ -110,6 +113,7 @@ header span {
 }
 .help__cards--bg:hover {
   background: #DBB8D5;
+  cursor: pointer;
 }
 .help__cards--bg:hover span {
   color: #9356DC;
@@ -216,6 +220,7 @@ header span {
 .restos__cards--content span:hover {
   opacity: 0;
   color: white;
+  transition: all 1s linear;
 }
 .restos__cards--content i {
   position: relative;
@@ -233,6 +238,8 @@ header span {
 }
 
 footer {
+  position: relative;
+  /*top: 800px; en attente ********************************************/
   width: 100%;
   margin: 0;
   padding: 0;
@@ -244,7 +251,6 @@ footer .infos {
   padding: 5% 10%;
   letter-spacing: 1px;
   line-height: 30px;
-  border: 1px solid yellow;
 }
 footer .infos h4 {
   margin-bottom: 0;
@@ -255,6 +261,10 @@ footer .infos ul {
   padding: 0;
   list-style-type: none;
   text-align: left;
+}
+footer .infos ul a {
+  text-decoration: none;
+  color: white;
 }
 footer .infos ul span {
   padding-right: 5%;
@@ -276,6 +286,7 @@ footer .infos .fa-hands-helping {
   height: 250px;
   background-position: center;
   background-size: cover;
+  position: absolute;
 }
 .banniere__1 {
   background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
@@ -292,26 +303,151 @@ footer .infos .fa-hands-helping {
 
 .container {
   background: #f5f5f5;
-  border-radius: 25px 25px 0 0;
-  padding: 25px;
+  border-radius: 30px 30px 0 0;
+  padding: 15px 15px 25px 15px;
+  position: relative;
+  top: 203px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 45px;
 }
 
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
 .menu__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 14px;
+}
+.menu__title span {
+  font-size: 24px;
+  padding: 0 7% 2% 0%;
+}
+.menu h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: normal;
+  padding-bottom: 2%;
+  margin: 0;
+  width: 13%;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu .entrees {
+  opacity: 0;
+  animation: anim 3s linear forwards 1s;
+}
+.menu .plats {
+  opacity: 0;
+  animation: anim 3s linear forwards 5.5s;
+}
+.menu .desserts {
+  opacity: 0;
+  animation: anim 3s linear forwards 9s;
 }
 .menu__cards {
   background: white;
-  border-radius: 5%;
+  border-radius: 15px;
+  padding: 2% 5%;
+  box-shadow: 0 7px 1px #EAE8E8;
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;*/
+}
+.menu__cards--1 {
+  opacity: 0;
+  animation: anim 1s linear forwards 2s;
+}
+.menu__cards--2 {
+  opacity: 0;
+  animation: anim 1s linear forwards 3s;
+}
+.menu__cards--3 {
+  opacity: 0;
+  animation: anim 1s linear forwards 4s;
+}
+.menu__cards--4 {
+  opacity: 0;
+  animation: anim 1s linear forwards 5s;
+}
+.menu__cards--5 {
+  opacity: 0;
+  animation: anim 1s linear forwards 6.5s;
+}
+.menu__cards--6 {
+  opacity: 0;
+  animation: anim 3s linear forwards 7.5s;
+}
+.menu__cards--7 {
+  opacity: 0;
+  animation: anim 3s linear forwards 8.5s;
+}
+.menu__cards--8 {
+  opacity: 0;
+  animation: anim 3s linear forwards 9.5s;
+}
+.menu__cards--9 {
+  opacity: 0;
+  animation: anim 3s linear forwards 10.5s;
+}
+.menu__cards--10 {
+  opacity: 0;
+  animation: anim 3s linear forwards 11.5s;
+}
+.menu__cards:hover i {
+  display: inline;
+  color: white;
+  background: #99E2D0;
+  padding: 8% 8%;
+  margin-bottom: 10%;
+  border-radius: 0 15px 15px 0;
+  vertical-align: middle;
+  z-index: 1;
+}
+.menu__cards h3 {
+  margin: 0 0 2% 0;
+  width: 190px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: purple;
+}
+.menu__cards span {
+  z-index: 1;
+}
+.menu__cards i {
+  width: 0;
+  z-index: -1;
+  display: none;
 }
 .menu__price {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.menu__price p {
+  /**************************** Media querie 480px ***************************************/
+  margin: 0 0 2% 0;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu__price span {
+  font-weight: bold;
+}
 
-button {
+.btn {
+  position: relative;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding-bottom: 40px;
+  top: 1220px;
+}
+.btn button {
   width: 65%;
   padding: 5%;
   margin: 5%;
@@ -320,6 +456,19 @@ button {
   border-radius: 25px;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
+  font-size: 20px;
+}
+.btn button:hover {
+  opacity: 0;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

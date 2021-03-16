@@ -54,14 +54,10 @@ header {
         background-color: $lightgrey;
         padding: 5% 5% 12%;
         & button {
-        width: 65%;
-        padding: 5%;
-        margin: 5%;
-        border: 0;
-        box-shadow: $shadow;
-        border-radius: 25px;
-        color: white;
-        background: linear-gradient($colorSecondary, $colorPrimary);
+        @include btn;
+        &:hover {
+        cursor: pointer;
+        }
         }
     }
 }
@@ -101,6 +97,7 @@ header {
         }
         &--bg:hover {
             background: #DBB8D5; 
+            cursor: pointer;
             span {
             color: $colorPrimary;
             }   
@@ -176,6 +173,7 @@ header {
         span:hover {
             opacity: 0;
             color: white;
+            transition: all 1s linear;
         }
         i {
             position: relative;
@@ -195,6 +193,8 @@ header {
     }
 
 footer {
+    position: relative;
+    /*top: 800px; en attente ********************************************/
 	width: 100%;
 	margin: 0;
 	padding: 0;
@@ -205,7 +205,6 @@ footer {
         padding: 5% 10%;
         letter-spacing: 1px;
         line-height: 30px;
-        border: 1px solid yellow;
         h4 {
         margin-bottom: 0;
         text-align: left;   
@@ -215,6 +214,10 @@ footer {
         padding: 0;
         list-style-type: none;
         text-align: left;
+        a {
+            text-decoration: none;
+            color: white;
+        }
         span {
             padding-right: 5%;
         }
@@ -238,6 +241,7 @@ footer {
     height: 250px;  
     background-position: center;
     background-size: cover;
+    position: absolute;
     &__1 {
         background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
     }
@@ -254,26 +258,157 @@ footer {
 
 .container {
     background: $lightgrey;
-    border-radius: 25px 25px 0 0;
-    padding: 25px;
-    
+    border-radius: 30px 30px 0 0;
+    padding: 15px 15px 25px 15px;
+    position: relative;
+    top: 203px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 45px;
 }
 
 .menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
     &__title {
         @include centrage;
         justify-content: space-between;
+        font-size: 14px;
+        span {
+            font-size: 24px;
+            padding: 0 7% 2% 0%;
+        }
+    }
+    h2 {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: normal;
+        padding-bottom: 2%;
+        margin: 0;
+        width: 13%;
+        border-bottom: 3px solid $colorTertiary;
+    }
+    .entrees {
+        opacity: 0;
+        animation: anim 3s linear forwards 1s;
+    }
+    .plats {
+        opacity: 0;
+        animation: anim 3s linear forwards 5.5s;
+    }
+    .desserts {
+        opacity: 0;
+        animation: anim 3s linear forwards 9s;
     }
     &__cards {
         background: white;
-        border-radius: 5%;
+        border-radius: 15px;
+        padding: 2% 5%;
+        box-shadow: $shadow; 
+        /*display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;*/
+        &--1 {
+        opacity: 0;
+        animation: anim 1s linear forwards 2s;
+        }
+        &--2 {
+        opacity: 0;
+        animation: anim 1s linear forwards 3s;
+        }
+        &--3 {
+        opacity: 0;
+        animation: anim 1s linear forwards 4s;
+        }
+        &--4 {
+        opacity: 0;
+        animation: anim 1s linear forwards 5s;
+        }
+        &--5 {
+        opacity: 0;
+        animation: anim 1s linear forwards 6.5s;
+        }
+        &--6 {
+        opacity: 0;
+        animation: anim 3s linear forwards 7.5s;
+        }
+        &--7 {
+        opacity: 0;
+        animation: anim 3s linear forwards 8.5s;
+        }
+        &--8 {
+        opacity: 0;
+        animation: anim 3s linear forwards 9.5s;
+        }
+        &--9 {
+        opacity: 0;
+        animation: anim 3s linear forwards 10.5s;
+        }
+        &--10 {
+        opacity: 0;
+        animation: anim 3s linear forwards 11.5s;
+        }
+        &:hover{
+            i {
+                display: inline;
+                color: white;
+                background: $colorTertiary;
+                padding: 8% 8%;
+                margin-bottom: 10%;
+                border-radius: 0 15px 15px 0;
+                vertical-align: middle;
+                z-index: 1;
+            }
+        }
+        h3 {
+            margin: 0 0 2% 0;
+            width: 190px;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;   
+            background: purple; 
+        }
+        span {
+            z-index: 1;
+        }
+        i {
+            width: 0;
+            z-index: -1;
+            display: none;
+        }
     }
     &__price {
         @include centrage;
         justify-content: space-between;
+        p { /**************************** Media querie 480px ***************************************/
+            margin: 0 0 2% 0;   
+            width: 150px;           
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;       
+        }
+        span {
+            font-weight: bold;
+        }
+        
     }
 }
-
-button {
+.btn {
+    position: relative;
+    background-color: $lightgrey;
+    text-align: center;
+    padding-bottom: 40px;
+    top: 1220px;
+    button {
     @include btn;
+    font-size: 20px;
+    &:hover {
+        opacity: 0;
+    }
+    }
+}
+@keyframes anim {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
