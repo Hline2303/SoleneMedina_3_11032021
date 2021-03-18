@@ -205,9 +205,11 @@ footer {
         padding: 5% 10%;
         letter-spacing: 1px;
         line-height: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         h4 {
-        margin-bottom: 0;
-        text-align: left;   
+        margin-bottom: 0;           
         font-size: 18px;
         }
         ul {
@@ -291,15 +293,15 @@ footer {
     }
     .entrees {
         opacity: 0;
-        animation: anim 3s linear forwards 1s;
+        animation: anim 3s linear forwards 0.5s;
     }
     .plats {
         opacity: 0;
-        animation: anim 3s linear forwards 5.5s;
+        animation: anim 3s linear forwards 2.5s;
     }
     .desserts {
         opacity: 0;
-        animation: anim 3s linear forwards 9s;
+        animation: anim 3s linear forwards 4.5s;
     }
     &__cards {
         background: white;
@@ -311,43 +313,43 @@ footer {
         justify-content: space-between;*/
         &--1 {
         opacity: 0;
-        animation: anim 1s linear forwards 2s;
+        animation: anim 1s linear forwards 1s;
         }
         &--2 {
         opacity: 0;
-        animation: anim 1s linear forwards 3s;
+        animation: anim 1s linear forwards 1.5s;
         }
         &--3 {
         opacity: 0;
-        animation: anim 1s linear forwards 4s;
+        animation: anim 1s linear forwards 2s;
         }
         &--4 {
         opacity: 0;
-        animation: anim 1s linear forwards 5s;
+        animation: anim 1s linear forwards 3s;
         }
         &--5 {
         opacity: 0;
-        animation: anim 1s linear forwards 6.5s;
+        animation: anim 1s linear forwards 3.5s;
         }
         &--6 {
         opacity: 0;
-        animation: anim 3s linear forwards 7.5s;
+        animation: anim 3s linear forwards 4s;
         }
         &--7 {
         opacity: 0;
-        animation: anim 3s linear forwards 8.5s;
+        animation: anim 3s linear forwards 5s;
         }
         &--8 {
         opacity: 0;
-        animation: anim 3s linear forwards 9.5s;
+        animation: anim 3s linear forwards 5.5s;
         }
         &--9 {
         opacity: 0;
-        animation: anim 3s linear forwards 10.5s;
+        animation: anim 3s linear forwards 6s;
         }
         &--10 {
         opacity: 0;
-        animation: anim 3s linear forwards 11.5s;
+        animation: anim 3s linear forwards 6.5s;
         }
         &:hover{
             i {
@@ -412,3 +414,45 @@ footer {
     0% {opacity:0;}
     100% {opacity:1;}
 }
+
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+													/* Responsive */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/***************************** Tablet ***************************/
+@media only screen and (min-width: 783px) {
+    /*** Page accueil ***/
+    .help {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        & h2 {
+            grid-column: 1 / span 3;
+        }
+    }
+    .restos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr;
+        & h2 {
+            grid-column: 1 / span 2;
+        }
+    }
+    .infos {
+     /* a centrer */
+    }
+    /*** Page menu ***/
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    h2 {
+        grid-column: 2 / span 3;
+    }
+}
+
+
+/***************************** Desktop ***************************/

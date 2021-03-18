@@ -251,10 +251,12 @@ footer .infos {
   padding: 5% 10%;
   letter-spacing: 1px;
   line-height: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 footer .infos h4 {
   margin-bottom: 0;
-  text-align: left;
   font-size: 18px;
 }
 footer .infos ul {
@@ -338,15 +340,15 @@ footer .infos .fa-hands-helping {
 }
 .menu .entrees {
   opacity: 0;
-  animation: anim 3s linear forwards 1s;
+  animation: anim 3s linear forwards 0.5s;
 }
 .menu .plats {
   opacity: 0;
-  animation: anim 3s linear forwards 5.5s;
+  animation: anim 3s linear forwards 2.5s;
 }
 .menu .desserts {
   opacity: 0;
-  animation: anim 3s linear forwards 9s;
+  animation: anim 3s linear forwards 4.5s;
 }
 .menu__cards {
   background: white;
@@ -359,43 +361,43 @@ footer .infos .fa-hands-helping {
 }
 .menu__cards--1 {
   opacity: 0;
-  animation: anim 1s linear forwards 2s;
+  animation: anim 1s linear forwards 1s;
 }
 .menu__cards--2 {
   opacity: 0;
-  animation: anim 1s linear forwards 3s;
+  animation: anim 1s linear forwards 1.5s;
 }
 .menu__cards--3 {
   opacity: 0;
-  animation: anim 1s linear forwards 4s;
+  animation: anim 1s linear forwards 2s;
 }
 .menu__cards--4 {
   opacity: 0;
-  animation: anim 1s linear forwards 5s;
+  animation: anim 1s linear forwards 3s;
 }
 .menu__cards--5 {
   opacity: 0;
-  animation: anim 1s linear forwards 6.5s;
+  animation: anim 1s linear forwards 3.5s;
 }
 .menu__cards--6 {
   opacity: 0;
-  animation: anim 3s linear forwards 7.5s;
+  animation: anim 3s linear forwards 4s;
 }
 .menu__cards--7 {
   opacity: 0;
-  animation: anim 3s linear forwards 8.5s;
+  animation: anim 3s linear forwards 5s;
 }
 .menu__cards--8 {
   opacity: 0;
-  animation: anim 3s linear forwards 9.5s;
+  animation: anim 3s linear forwards 5.5s;
 }
 .menu__cards--9 {
   opacity: 0;
-  animation: anim 3s linear forwards 10.5s;
+  animation: anim 3s linear forwards 6s;
 }
 .menu__cards--10 {
   opacity: 0;
-  animation: anim 3s linear forwards 11.5s;
+  animation: anim 3s linear forwards 6.5s;
 }
 .menu__cards:hover i {
   display: inline;
@@ -470,5 +472,48 @@ footer .infos .fa-hands-helping {
     opacity: 1;
   }
 }
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/* Responsive */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/***************************** Tablet ***************************/
+@media only screen and (min-width: 783px) {
+  /*** Page accueil ***/
+  .help {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+  .help h2 {
+    grid-column: 1/span 3;
+  }
+
+  .restos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;
+  }
+  .restos h2 {
+    grid-column: 1/span 2;
+  }
+
+  .infos {
+    /* a centrer */
+  }
+
+  /*** Page menu ***/
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h2 {
+    grid-column: 2/span 3;
+  }
+}
+/***************************** Desktop ***************************/
 
 /*# sourceMappingURL=style.css.map */
