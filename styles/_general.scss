@@ -20,14 +20,13 @@ header {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-    /*box-shadow: 0px 5px 5px 3px blue;*/
+    /*box-shadow: 0 3px 10px 1px rgb(185, 185, 185);*/
     & img { /* Centrage du logo */
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin: 5% auto;
     width: 150px;
-    color: white;/* A enlever */
     }
     & .header__logo {
         @include centrage;
@@ -46,9 +45,25 @@ header {
     justify-content: center;
     background-color: $mediumgrey;
     box-sizing: border-box;
+    padding: 5%;
     }
-    &__txt p {
-    padding-left: 5%;
+    &__txt span {
+        text-align: center;
+        color: rgb(78, 78, 78);
+    }
+    &__txt input {
+        margin-left: 1%;
+        padding: 2% 5% 0 0;
+        width: 40%;
+        background-color: $mediumgrey;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 800;
+        border: none;
+    }
+    & ::placeholder {
+        color: rgb(78, 78, 78);
+        opacity: 1;
     }
     &__txt--presentation {
         background-color: $lightgrey;
@@ -57,6 +72,10 @@ header {
         @include btn;
         &:hover {
         cursor: pointer;
+        }
+        & a {
+            text-decoration: none;
+            color: white;
         }
         }
     }
@@ -185,13 +204,9 @@ header {
     }
     &--hearts {
         display: flex;
-    }
+        }
     }
 }
-.img1 {
-    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-    }
-
 footer {
     position: relative;
     /*top: 800px; en attente ********************************************/
@@ -205,9 +220,6 @@ footer {
         padding: 5% 10%;
         letter-spacing: 1px;
         line-height: 30px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
         h4 {
         margin-bottom: 0;           
         font-size: 18px;
@@ -215,7 +227,9 @@ footer {
         ul {
         padding: 0;
         list-style-type: none;
-        text-align: left;
+        width: auto;
+        margin-right: auto;
+        margin-left: auto;
         a {
             text-decoration: none;
             color: white;
@@ -273,13 +287,39 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 15px;
+    &:hover {
+        cursor: pointer;
+        }
     &__title {
         @include centrage;
         justify-content: space-between;
         font-size: 14px;
-        span {
+        /*span {
             font-size: 24px;
             padding: 0 7% 2% 0%;
+        }*/
+        span, i {
+            font-size: 25px;
+        }
+        span { 
+            position: absolute;
+            background-color: $lightgrey;
+        }
+        
+        span:hover {
+            opacity: 0;
+            color: white;
+            transition: all 1s linear;
+        }
+        i {
+            position: relative;
+            background: linear-gradient($colorPrimary, $colorSecondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        &--hearts {
+            display: flex;
         }
     }
     h2 {
@@ -308,6 +348,7 @@ footer {
         border-radius: 15px;
         padding: 2% 5%;
         box-shadow: $shadow; 
+        box-sizing: border-box;
         /*display: flex;
         flex-wrap: wrap;
         justify-content: space-between;*/
@@ -353,31 +394,43 @@ footer {
         }
         &:hover{
             i {
+                width: 50px;
+                opacity: 1;
+                z-index: 1;
+                transition: all 0.3s ease-in-out;
+                border-radius: 0 15px 15px 0;
+                /*
                 display: inline;
                 color: white;
                 background: $colorTertiary;
                 padding: 8% 8%;
                 margin-bottom: 10%;
-                border-radius: 0 15px 15px 0;
                 vertical-align: middle;
-                z-index: 1;
+                z-index: 1;*/
             }
-        }
+        }/*
         h3 {
             margin: 0 0 2% 0;
             width: 190px;
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;   
-            background: purple; 
-        }
+        }*/
         span {
             z-index: 1;
         }
         i {
             width: 0;
+            height: 60px;
+            @include centrage;
+            justify-content: center;
+            background-color: $colorTertiary;
+            opacity: 0;
             z-index: -1;
-            display: none;
+            color: white;
+            border-radius: 0 15px 15px 0;
+            padding: 5% 5%;
+            /*display: none;*/
         }
     }
     &__price {
@@ -441,16 +494,26 @@ footer {
             grid-column: 1 / span 2;
         }
     }
+    
     .infos {
      /* a centrer */
+     ul { /* A revoir */
+        width: 150%;
+        margin-right: auto;
+        margin-left: auto;
+        border: 1px solid salmon;
+     }
     }
     /*** Page menu ***/
-    .menu {
+    .container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    h2 {
-        grid-column: 2 / span 3;
+    .menu h2 {
+        width: 8%;
+    }
+    .menu__title {
+        grid-column: 1 / span 3;
     }
 }
 

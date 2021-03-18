@@ -21,7 +21,7 @@ header {
   margin: 0;
   padding: 0;
   height: 100%;
-  /*box-shadow: 0px 5px 5px 3px blue;*/
+  /*box-shadow: 0 3px 10px 1px rgb(185, 185, 185);*/
 }
 header img {
   /* Centrage du logo */
@@ -30,8 +30,6 @@ header img {
   margin-right: auto;
   margin: 5% auto;
   width: 150px;
-  color: white;
-  /* A enlever */
 }
 header .header__logo {
   display: flex;
@@ -52,9 +50,25 @@ header span {
   justify-content: center;
   background-color: #EAE8E8;
   box-sizing: border-box;
+  padding: 5%;
 }
-.search__txt p {
-  padding-left: 5%;
+.search__txt span {
+  text-align: center;
+  color: #4e4e4e;
+}
+.search__txt input {
+  margin-left: 1%;
+  padding: 2% 5% 0 0;
+  width: 40%;
+  background-color: #EAE8E8;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 800;
+  border: none;
+}
+.search ::placeholder {
+  color: #4e4e4e;
+  opacity: 1;
 }
 .search__txt--presentation {
   background-color: #f5f5f5;
@@ -72,6 +86,10 @@ header span {
 }
 .search__txt--presentation button:hover {
   cursor: pointer;
+}
+.search__txt--presentation button a {
+  text-decoration: none;
+  color: white;
 }
 
 .help {
@@ -233,10 +251,6 @@ header span {
   display: flex;
 }
 
-.img1 {
-  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-}
-
 footer {
   position: relative;
   /*top: 800px; en attente ********************************************/
@@ -251,9 +265,6 @@ footer .infos {
   padding: 5% 10%;
   letter-spacing: 1px;
   line-height: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 footer .infos h4 {
   margin-bottom: 0;
@@ -262,7 +273,9 @@ footer .infos h4 {
 footer .infos ul {
   padding: 0;
   list-style-type: none;
-  text-align: left;
+  width: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 footer .infos ul a {
   text-decoration: none;
@@ -319,15 +332,40 @@ footer .infos .fa-hands-helping {
   grid-template-columns: 1fr;
   grid-gap: 15px;
 }
+.menu:hover {
+  cursor: pointer;
+}
 .menu__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  /*span {
+      font-size: 24px;
+      padding: 0 7% 2% 0%;
+  }*/
+}
+.menu__title span, .menu__title i {
+  font-size: 25px;
 }
 .menu__title span {
-  font-size: 24px;
-  padding: 0 7% 2% 0%;
+  position: absolute;
+  background-color: #f5f5f5;
+}
+.menu__title span:hover {
+  opacity: 0;
+  color: white;
+  transition: all 1s linear;
+}
+.menu__title i {
+  position: relative;
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.menu__title--hearts {
+  display: flex;
 }
 .menu h2 {
   text-transform: uppercase;
@@ -355,9 +393,18 @@ footer .infos .fa-hands-helping {
   border-radius: 15px;
   padding: 2% 5%;
   box-shadow: 0 7px 1px #EAE8E8;
+  box-sizing: border-box;
   /*display: flex;
   flex-wrap: wrap;
   justify-content: space-between;*/
+  /*
+  h3 {
+      margin: 0 0 2% 0;
+      width: 190px;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;   
+  }*/
 }
 .menu__cards--1 {
   opacity: 0;
@@ -400,30 +447,36 @@ footer .infos .fa-hands-helping {
   animation: anim 3s linear forwards 6.5s;
 }
 .menu__cards:hover i {
+  width: 50px;
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 15px 15px 0;
+  /*
   display: inline;
   color: white;
-  background: #99E2D0;
+  background: $colorTertiary;
   padding: 8% 8%;
   margin-bottom: 10%;
-  border-radius: 0 15px 15px 0;
   vertical-align: middle;
-  z-index: 1;
-}
-.menu__cards h3 {
-  margin: 0 0 2% 0;
-  width: 190px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: purple;
+  z-index: 1;*/
 }
 .menu__cards span {
   z-index: 1;
 }
 .menu__cards i {
   width: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  opacity: 0;
   z-index: -1;
-  display: none;
+  color: white;
+  border-radius: 0 15px 15px 0;
+  padding: 5% 5%;
+  /*display: none;*/
 }
 .menu__price {
   display: flex;
@@ -503,15 +556,26 @@ footer .infos .fa-hands-helping {
   .infos {
     /* a centrer */
   }
+  .infos ul {
+    /* A revoir */
+    width: 150%;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid salmon;
+  }
 
   /*** Page menu ***/
-  .menu {
+  .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  h2 {
-    grid-column: 2/span 3;
+  .menu h2 {
+    width: 8%;
+  }
+
+  .menu__title {
+    grid-column: 1/span 3;
   }
 }
 /***************************** Desktop ***************************/
