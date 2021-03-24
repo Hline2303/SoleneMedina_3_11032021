@@ -1,0 +1,17 @@
+.menu__button {
+    position: relative;
+    background-color: $lightgrey;
+    text-align: center;
+    padding-bottom: 40px;
+    top: 0px;
+    @include btn;
+    font-size: 20px;
+    &:hover {
+    cursor: pointer;
+    background: $gradientLight;
+    box-shadow: $shadowDarken;
+    }
+    @media only screen and (min-width: 783px) {
+        
+    }
+}
