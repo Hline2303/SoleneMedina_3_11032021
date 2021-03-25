@@ -1,24 +1,119 @@
-.lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Open Sans", sans serif;
 }
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+
+.box {
+	width: 200px;
+	height: 200px;
+	border: 10px solid #ccc;
+	border-radius: 10px;
+	line-height: 200px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+	overflow: hidden;
 }
-@keyframes lds-dual-ring {
+
+.box:before {
+	content: "";
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: #00acee;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 40%;
+	animation: fill 3s ease-in forwards;
+	z-index: -1;
+}
+
+@keyframes fill {
+	from {
+		top: 150px;
+		transform: translate(-50%) rotate(0deg);
+	}
+	to {
+		top: 100px;
+		transform: translateX(-50%) rotate(360deg);
+	}/*
+	0% {
+		background-position: 0 100px;
+	}
+	10% {
+		background-position: 0 100px;
+	}
+	40% {
+		background-position: 1000px -70px;
+	}
+	0% {
+		background-position: 2000px -80px;
+	}*/
+}
+
+/*********************** Code cat img ***********************/
+
+@keyframes apparition {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   100% {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
+body {
+  font-family: sans-serif;
+  background-color: #f4fcf8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
