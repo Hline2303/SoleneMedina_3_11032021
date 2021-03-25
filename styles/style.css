@@ -1,73 +1,5 @@
 @charset "UTF-8";
 /*****ATTENTION A L'ORDRE LE FICHIER STYLE VIENT APRES LES FONCTIONS SASS : MIXINS, VARIABLES, EXTEND....******/
-footer {
-  position: relative;
-  /*top: 800px; en attente ********************************************/
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-footer .infos {
-  background: #2C2B2C;
-  color: white;
-  padding: 16px 32px;
-  letter-spacing: 1px;
-  line-height: 30px;
-}
-footer .infos h4 {
-  margin-bottom: 0;
-  font-size: 18px;
-}
-footer .infos ul {
-  padding: 0;
-  list-style-type: none;
-  width: 100%;
-  /******* Mettre 20% pour le responsive ********/
-}
-footer .infos ul a {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-footer .infos .fa-utensils {
-  padding-right: 12px;
-}
-footer .infos .fa-hands-helping {
-  padding-right: 10px;
-  font-size: 12px;
-  rotate: -10deg;
-}
-@media only screen and (min-width: 783px) {
-  footer {
-    top: 0;
-  }
-}
-
-header {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  z-index: 1;
-  position: relative;
-  box-shadow: 0 3px 10px 1px #b9b9b9;
-}
-header img {
-  /* Centrage du logo */
-  display: block;
-  margin: 16px auto;
-  width: 150px;
-}
-header .header__logo {
-  display: flex;
-  align-items: center;
-}
-header span {
-  padding-left: 29px;
-  font-weight: normal;
-}
-
 .search {
   text-align: center;
   font-size: 16px;
@@ -281,47 +213,24 @@ header span {
   display: flex;
 }
 
-.banniere {
-  width: 100%;
-  height: 250px;
-  background-position: center 60%;
-  background-size: cover;
-}
-.banniere__1 {
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-}
-.banniere__2 {
-  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
-}
-.banniere__3 {
-  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
-}
-.banniere__4 {
-  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
-}
-@media only screen and (min-width: 783px) {
-  .banniere {
-    height: 500px;
-  }
-  .banniere__2 {
-    background-position: center 62%;
-    border: 3px solid yellow;
-  }
+.menus {
+  background-color: #f5f5f5;
 }
 
 .container {
+  box-sizing: border-box;
   background: #f5f5f5;
   border-radius: 30px 30px 0 0;
-  padding: 15px 15px 25px 15px;
+  padding: 15px 15px 0;
   position: relative;
   top: -30px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 45px;
+  gap: 15px;
 }
 @media only screen and (min-width: 783px) {
   .container {
-    padding-bottom: 155px;
+    /*padding-bottom: 100px;*/
   }
 }
 
@@ -329,15 +238,19 @@ header span {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 15px;
-}
-.menu:hover {
-  cursor: pointer;
+  padding-bottom: 45px;
+  /*opacity: 0; Permet de cacher le menu */
 }
 .menu__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+}
+@media only screen and (min-width: 320px) and (max-width: 337px) {
+  .menu__title {
+    font-size: 12px;
+  }
 }
 .menu__title span, .menu__title i {
   font-size: 25px;
@@ -370,18 +283,6 @@ header span {
   width: 13%;
   border-bottom: 3px solid #99E2D0;
 }
-.menu .entrees {
-  opacity: 0;
-  animation: anim 3s linear forwards 0.5s;
-}
-.menu .plats {
-  opacity: 0;
-  animation: anim 3s linear forwards 2.5s;
-}
-.menu .desserts {
-  opacity: 0;
-  animation: anim 3s linear forwards 4.5s;
-}
 .menu__cards {
   background: white;
   border-radius: 15px;
@@ -398,28 +299,17 @@ header span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transform: translateY(-30%);
-  transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
-.menu__cards--1 {
-  opacity: 0;
-  animation: anim 1s linear forwards;
-  transform: translateY(-30%);
-  /******** revoir *******************/
-  transition: transform 0.3s ease-in-out;
+@media only screen and (min-width: 320px) and (max-width: 337px) {
+  .menu__cards {
+    padding: 0 14px;
+  }
 }
-.menu__cards--2 {
-  opacity: 0;
-  animation: anim 1s linear forwards;
-  transform: translateY(-30%);
-  transition: transform 0.3s ease-in-out;
-}
-.menu__cards--3 {
-  opacity: 0;
-  animation: anim 1s linear forwards;
-  transform: translateY(-30%);
-  transition: transform 0.3s ease-in-out;
+@media only screen and (min-width: 783px) and (max-width: 1087px) {
+  .menu__cards {
+    width: 100%;
+  }
 }
 .menu__cards h3, .menu__cards p {
   /* A modif peut-être */
@@ -430,6 +320,18 @@ header span {
   overflow: hidden;
   text-overflow: ellipsis;
   /* Media queries à rajouter */
+}
+@media only screen and (min-width: 320px) and (max-width: 337px) {
+  .menu__cards h3, .menu__cards p {
+    font-size: 14px;
+    width: 150px;
+  }
+}
+@media only screen and (min-width: 783px) and (max-width: 1087px) {
+  .menu__cards h3, .menu__cards p {
+    font-size: 14px;
+    width: 95px;
+  }
 }
 .menu__cards--price {
   display: flex;
@@ -444,6 +346,11 @@ header span {
   opacity: 1;
   margin-right: 10px;
   font-weight: bold;
+}
+@media only screen and (min-width: 783px) and (max-width: 1087px) {
+  .menu__cards--price span {
+    margin-right: 0px;
+  }
 }
 .menu__cards--check {
   position: relative;
@@ -463,6 +370,11 @@ header span {
   transition: all 0.3s ease-in-out;
   font-size: 20px;
 }
+@media only screen and (min-width: 320px) and (max-width: 337px) {
+  .menu__cards--check {
+    left: 15px;
+  }
+}
 .menu__cards--check i {
   transition: transform 1s;
 }
@@ -481,16 +393,139 @@ header span {
   margin-right: 0px;
 }
 
-@keyframes anim {
-  0% {
-    opacity: 0;
-    transform: translateY(30%);
+header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 3px 10px 1px #b9b9b9;
+}
+header img {
+  /* Centrage du logo */
+  display: block;
+  margin: 16px auto;
+  width: 150px;
+}
+header .header__logo {
+  display: flex;
+  align-items: center;
+}
+header span {
+  padding-left: 29px;
+  font-weight: normal;
+}
+
+footer {
+  position: relative;
+  /*top: 800px; en attente ********************************************/
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+footer .infos {
+  background: #2C2B2C;
+  color: white;
+  padding: 16px 32px;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+footer .infos h4 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+footer .infos ul {
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  /******* Mettre 20% pour le responsive ********/
+}
+footer .infos ul a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+footer .infos .fa-utensils {
+  padding-right: 12px;
+}
+footer .infos .fa-hands-helping {
+  padding-right: 10px;
+  font-size: 12px;
+  rotate: -10deg;
+}
+@media only screen and (min-width: 783px) {
+  footer {
+    top: 0;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  footer .infos ul {
+    /*width: 30%;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
+
+.banniere {
+  width: 100%;
+  height: 250px;
+  background-position: center 60%;
+  background-size: cover;
+}
+.banniere__1 {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.banniere__2 {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+.banniere__3 {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.banniere__4 {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+@media only screen and (min-width: 783px) {
+  .banniere {
+    height: 500px;
+  }
+  .banniere__2 {
+    background-position: center 62%;
+  }
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
 .menu__button {
   position: relative;
   background-color: #f5f5f5;
@@ -512,6 +547,234 @@ header span {
   background: linear-gradient(#fca5e3, #b598da);
   box-shadow: 0 7px 1px #c9c8c8;
 }
+@keyframes anim {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu__cards--1 {
+  animation: anim 2s linear 0.1s forwards;
+}
+
+.menu__cards--2 {
+  animation: anim 4s linear 0.1s forwards;
+}
+
+.menu__cards--3 {
+  animation: anim 6s linear 0.1s forwards;
+}
+
+.menu__cards--4 {
+  animation: anim 8s linear 0.1s forwards;
+}
+
+.menu__cards--5 {
+  animation: anim 10s linear 0.1s forwards;
+}
+
+.menu__cards--6 {
+  animation: anim 12s linear 0.1s forwards;
+}
+
+.menu__cards--7 {
+  animation: anim 14s linear 0.1s forwards;
+}
+
+.menu__cards--8 {
+  animation: anim 16s linear 0.1s forwards;
+}
+
+.menu__cards--9 {
+  animation: anim 18s linear 0.1s forwards;
+}
+
+.menu__cards--10 {
+  animation: anim 20s linear 0.1s forwards;
+}
+
+.menu__cards--11 {
+  animation: anim 22s linear 0.1s forwards;
+}
+
+.menu__cards--12 {
+  animation: anim 24s linear 0.1s forwards;
+}
+
+.menu__cards--13 {
+  animation: anim 26s linear 0.1s forwards;
+}
+
+.menu__cards--14 {
+  animation: anim 28s linear 0.1s forwards;
+}
+
+.menu__cards--15 {
+  animation: anim 30s linear 0.1s forwards;
+}
+
+.menu__cards--16 {
+  animation: anim 32s linear 0.1s forwards;
+}
+
+.menu__cards--17 {
+  animation: anim 34s linear 0.1s forwards;
+}
+
+.menu__cards--18 {
+  animation: anim 36s linear 0.1s forwards;
+}
+
+.menu__cards--19 {
+  animation: anim 38s linear 0.1s forwards;
+}
+
+.menu__cards--20 {
+  animation: anim 40s linear 0.1s forwards;
+}
+
+.menu__cards--21 {
+  animation: anim 42s linear 0.1s forwards;
+}
+
+.menu__cards--22 {
+  animation: anim 44s linear 0.1s forwards;
+}
+
+.menu__cards--23 {
+  animation: anim 46s linear 0.1s forwards;
+}
+
+.menu__cards--24 {
+  animation: anim 48s linear 0.1s forwards;
+}
+
+.menu__cards--25 {
+  animation: anim 50s linear 0.1s forwards;
+}
+
+.menu__cards--26 {
+  animation: anim 52s linear 0.1s forwards;
+}
+
+.menu__cards--27 {
+  animation: anim 54s linear 0.1s forwards;
+}
+
+.menu__cards--28 {
+  animation: anim 56s linear 0.1s forwards;
+}
+
+.menu__cards--29 {
+  animation: anim 58s linear 0.1s forwards;
+}
+
+.menu__cards--30 {
+  animation: anim 60s linear 0.1s forwards;
+}
+
+.menu__cards--31 {
+  animation: anim 62s linear 0.1s forwards;
+}
+
+.menu__cards--32 {
+  animation: anim 64s linear 0.1s forwards;
+}
+
+.menu__cards--33 {
+  animation: anim 66s linear 0.1s forwards;
+}
+
+.menu__cards--34 {
+  animation: anim 68s linear 0.1s forwards;
+}
+
+.menu__cards--35 {
+  animation: anim 70s linear 0.1s forwards;
+}
+
+.menu__cards--36 {
+  animation: anim 72s linear 0.1s forwards;
+}
+
+.menu__cards--37 {
+  animation: anim 74s linear 0.1s forwards;
+}
+
+.menu__cards--38 {
+  animation: anim 76s linear 0.1s forwards;
+}
+
+.menu__cards--39 {
+  animation: anim 78s linear 0.1s forwards;
+}
+
+.menu__cards--40 {
+  animation: anim 80s linear 0.1s forwards;
+}
+
+.menu__cards--41 {
+  animation: anim 82s linear 0.1s forwards;
+}
+
+.menu__cards--42 {
+  animation: anim 84s linear 0.1s forwards;
+}
+
+.menu__cards--43 {
+  animation: anim 86s linear 0.1s forwards;
+}
+
+.menu__cards--44 {
+  animation: anim 88s linear 0.1s forwards;
+}
+
+.menu__cards--45 {
+  animation: anim 90s linear 0.1s forwards;
+}
+
+.menu__cards--46 {
+  animation: anim 92s linear 0.1s forwards;
+}
+
+.menu__cards--47 {
+  animation: anim 94s linear 0.1s forwards;
+}
+
+.menu__cards--48 {
+  animation: anim 96s linear 0.1s forwards;
+}
+
+.menu__cards--49 {
+  animation: anim 98s linear 0.1s forwards;
+}
+
+.menu__cards--50 {
+  animation: anim 100s linear 0.1s forwards;
+}
+
+.menu__met--1 {
+  /* Penser à modif la class sur les autres pg */
+  opacity: 0;
+  animation: anim 3s 1.6s linear forwards;
+}
+
+.menu__met--2 {
+  /* Penser à modif la class sur les autres pg */
+  opacity: 0;
+  animation: anim 6s 1.6s linear forwards;
+}
+
+.menu__met--3 {
+  /* Penser à modif la class sur les autres pg */
+  opacity: 0;
+  animation: anim 9s 1.6s linear forwards;
+}
+
 main {
   min-width: 320px;
   width: 100%;

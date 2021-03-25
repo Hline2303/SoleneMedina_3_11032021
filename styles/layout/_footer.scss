@@ -40,5 +40,13 @@ footer {
     }
     @media only screen and (min-width: 783px) {
         top: 0;
+        .infos ul {
+        /*width: 30%;*/
+        @include centrage;
+        flex-direction: column;
+        & li {
+            
+        }
+       }
     }
 }

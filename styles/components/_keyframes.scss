@@ -1,0 +1,23 @@
+@keyframes anim {
+    0% {
+        opacity:0;
+        transform: translateY(30%); 
+    }
+    100% {
+        opacity:1;
+        transform: translateY(0); 
+    }
+}
+
+@for $i from 1 through 50 {
+    .menu__cards--#{$i} {
+        animation: anim ($i * 2s) linear 0.1s forwards ;
+    }
+}
+
+@for $i from 1 through 3 {
+    .menu__met--#{$i} { /* Penser à modif la class sur les autres pg */
+        opacity: 0;
+        animation: anim ($i * 3s) 1.6s linear forwards;
+    }
+}

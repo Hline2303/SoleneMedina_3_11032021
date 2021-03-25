@@ -1,9 +1,12 @@
 /*****ATTENTION A L'ORDRE LE FICHIER STYLE VIENT APRES LES FONCTIONS SASS : MIXINS, VARIABLES, EXTEND....******/
 @import '../styles/abstracts/variables';
 @import '../styles/abstracts/mixins';
-@import '../styles/layout/footer';
-@import '../styles/layout/header';
 @import '../styles/pages/home';
 @import '../styles/pages/menus';
+@import '../styles/layout/header';
+@import '../styles/layout/footer';
+@import '../styles/layout/banner';
+@import '../styles/components/loader';
 @import '../styles/components/button';
+@import '../styles/components/keyframes';
 @import '../styles/sass/general';
