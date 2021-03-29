@@ -3,32 +3,35 @@
     align-items: center;
 }
 @mixin btn {
-    width: 65%;
-    padding: 5%;
-    margin: 5%;
+    width: 188px;
+    padding: 14px;
+    margin: 14px;
     border: 0;
     box-shadow: $shadow;
     border-radius: 25px;
     color: white;
-    background: linear-gradient($colorSecondary, $colorPrimary);
+    background: $gradient;
 }
 
 @mixin card {
     border-radius: 25px 25px 0 0;   
     background-size: cover;
     overflow: hidden;
-    padding-bottom: 50%;
+    padding-bottom: 134px;
 }
 
 @mixin new {
     background-color: rgba(0, 255, 179, 0.979);
     color: green;
     font-size: 12px;
-    padding: 2%;
+    padding: 5px;
     border-radius: 5%;
     position: absolute;
     right: 5%;
     top: 5%;
-    /*box-shadow: 0 5px 18px #d8d7d7;
-    box-shadow: 0 0px 1px 0px; a voir plus tard */
+}
+
+@mixin centrageH {
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,0 +1,165 @@
+.menus{
+    background-color: $lightgrey;
+}
+
+.container {
+    box-sizing: border-box;
+    background: $lightgrey;
+    border-radius: 30px 30px 0 0;
+    padding: 15px 15px 0;
+    position: relative;
+    top: -30px; 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    @media only screen and (min-width: 783px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding-bottom: 45px;
+    &__title {
+        @include centrage;
+            justify-content: space-between;
+            font-size: 14px;
+        @media only screen and (min-width: 320px) and (max-width: 337px) {
+            font-size: 12px;
+        }
+        @media only screen and (min-width: 783px) {
+            grid-column: 1 / span 3;
+        }
+        span, i {
+            font-size: 25px;
+        }
+        span { 
+            position: absolute;
+            background-color: $lightgrey;
+        }
+        span:hover {
+            opacity: 0;
+            color: white;
+            transition: all 0.3s linear;
+        }
+        i {
+            position: relative;
+            background: linear-gradient($colorPrimary, $colorSecondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        &--hearts {
+            display: flex;
+        }
+    }
+    h2 {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: normal;
+        padding-bottom: 6px;
+        margin: 0;
+        width: 13%;
+        border-bottom: 3px solid $colorTertiary;
+        @media only screen and (min-width: 783px) {
+            width: 8%;
+        }
+    }
+    &__cards {
+        background: white;
+        border-radius: 15px;
+        padding: 0 24px;
+        box-shadow: $shadow; 
+        box-sizing: border-box;
+        position: relative;
+        top: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        @media only screen and (min-width: 320px) and (max-width: 337px) {
+            padding: 0 14px;
+           }
+        @media only screen and (min-width: 783px) and (max-width: 1087px) {
+           width: 100%;
+        }
+        &:hover .menu__cards--check {
+            width: 35px;
+            opacity: 1;
+            z-index: 1;
+            i {
+                transform: rotate(360deg) translateZ(0);
+            }
+        }
+        &:hover .menu__cards--price {
+            span {
+                left: 0px;
+                margin-right: 0px;
+            }
+        }
+        h3, p { 
+            margin: 0;
+            width: 190px;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @media only screen and (min-width: 320px) and (max-width: 337px) {
+                font-size: 14px;
+                width: 150px;
+               }
+            @media only screen and (min-width: 783px) and (max-width: 1087px) {
+                font-size: 14px;
+                width: 95px;
+            }
+        }
+        &--price {
+            display: flex;
+            & span {
+                position: relative;
+                z-index: 1;
+                padding: 38px 0 10px;
+                text-align: center;
+                left: 45px;
+                opacity: 1;
+                margin-right: 10px;
+                font-weight: bold;
+                @media only screen and (min-width: 783px) and (max-width: 1087px) {
+                    margin-right: 0px;
+                }
+            }
+        }
+        &--check {
+            position: relative;
+            z-index: -1;
+            padding-left: 25px;
+            padding-right: 7px;
+            text-align: center;
+            left: 27px;
+            color: white;
+            opacity: 0;
+            width: 0;
+            height: 70px;
+            @include centrage;
+            background: $colorTertiary;
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s ease-in-out;
+            font-size: 20px;
+            @media only screen and (min-width: 320px) and (max-width: 337px) {
+                left: 15px;
+               }
+            i {
+                transition: transform 1s;
+            }
+        }        
+    }
+}
+
+
+
