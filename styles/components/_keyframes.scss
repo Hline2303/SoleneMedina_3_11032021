@@ -11,13 +11,28 @@
 
 @for $i from 1 through 50 {
     .menu__cards--#{$i} {
-        animation: anim ($i * 2s) linear 0.1s forwards ;
+        animation: anim ($i * 500ms) linear 0.1s forwards ;
     }
 }
 
-@for $i from 1 through 3 {
-    .menu__met--#{$i} { /* Penser à modif la class sur les autres pg */
+@keyframes fill {
+	from {
+		top: 150px;
+		transform: translate(-50%) rotate(0deg);
+	}
+	to {
+		top: 100px;
+		transform: translateX(-50%) rotate(360deg);
+	}
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+        z-index: 1000;
+    }
+    100% {
         opacity: 0;
-        animation: anim ($i * 3s) 1.6s linear forwards;
+        z-index: -1;
     }
 }

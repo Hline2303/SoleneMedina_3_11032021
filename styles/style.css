@@ -1,28 +1,32 @@
-@charset "UTF-8";
 /*****ATTENTION A L'ORDRE LE FICHIER STYLE VIENT APRES LES FONCTIONS SASS : MIXINS, VARIABLES, EXTEND....******/
+.page {
+  background-color: white;
+  /*animation: apparition 0.3s 3000ms;*/
+}
+
 .search {
   text-align: center;
   font-size: 16px;
+  max-width: 1400px;
+  margin: auto;
 }
 .search__txt {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background-color: #EAE8E8;
   box-sizing: border-box;
   padding: 16px;
 }
 .search__txt span {
-  text-align: center;
+  margin-left: 60px;
   color: #4e4e4e;
 }
 .search__txt input {
   margin-left: 2px;
-  padding: 5px 14px 0 0;
-  width: 40%;
+  padding: 5px 14px 0 20px;
   background-color: #EAE8E8;
-  text-align: center;
-  vertical-align: middle;
   font-weight: 800;
   border: none;
 }
@@ -34,7 +38,7 @@
   background-color: #f5f5f5;
   padding: 16px 16px 38px;
 }
-.search__txt--presentation button {
+.search__txt--presentation-button {
   width: 188px;
   padding: 14px;
   margin: 14px;
@@ -43,20 +47,33 @@
   border-radius: 25px;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
+  margin-left: auto;
+  margin-right: auto;
 }
-.search__txt--presentation button:hover {
+.search__txt--presentation-button:hover {
   cursor: pointer;
   background: linear-gradient(#fca5e3, #b598da);
   box-shadow: 0 7px 1px #c9c8c8;
 }
-.search__txt--presentation button a {
+.search__txt--presentation a {
   text-decoration: none;
   color: white;
 }
 
 .help {
   padding: 12px;
-  margin-bottom: 44px;
+  margin: auto;
+  max-width: 1400px;
+}
+@media only screen and (min-width: 783px) {
+  .help {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+  .help h2 {
+    grid-column: 1/span 3;
+  }
 }
 .help__cards {
   display: flex;
@@ -92,7 +109,6 @@
   box-shadow: 0 7px 1px #EAE8E8;
 }
 .help__cards--bg:hover {
-  background: #DBB8D5;
   cursor: pointer;
 }
 .help__cards--bg:hover span {
@@ -107,6 +123,18 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  max-width: 1400px;
+  margin: auto;
+}
+@media only screen and (min-width: 783px) {
+  .restos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr;
+  }
+  .restos h2 {
+    grid-column: 1/span 2;
+  }
 }
 .restos h2 {
   margin: 27px 0 0;
@@ -117,6 +145,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  background-size: cover;
 }
 .restos__cards--img1 {
   border-radius: 25px 25px 0 0;
@@ -125,6 +154,11 @@
   padding-bottom: 134px;
   background-position: center bottom;
   background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+@media only screen and (min-width: 540px) {
+  .restos__cards--img1 {
+    background-position: center 60%;
+  }
 }
 .restos__cards--img1 span {
   background-color: rgba(0, 255, 179, 0.979);
@@ -135,8 +169,6 @@
   position: absolute;
   right: 5%;
   top: 5%;
-  /*box-shadow: 0 5px 18px #d8d7d7;
-  box-shadow: 0 0px 1px 0px; a voir plus tard */
 }
 .restos__cards--img2 {
   border-radius: 25px 25px 0 0;
@@ -155,8 +187,6 @@
   position: absolute;
   right: 5%;
   top: 5%;
-  /*box-shadow: 0 5px 18px #d8d7d7;
-  box-shadow: 0 0px 1px 0px; a voir plus tard */
 }
 .restos__cards--img3 {
   border-radius: 25px 25px 0 0;
@@ -166,6 +196,16 @@
   background-position: center bottom;
   background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
 }
+@media only screen and (min-width: 540px) {
+  .restos__cards--img3 {
+    background-position: center 60%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .restos__cards--img3 {
+    background-position: center 70%;
+  }
+}
 .restos__cards--img4 {
   border-radius: 25px 25px 0 0;
   background-size: cover;
@@ -173,6 +213,11 @@
   padding-bottom: 134px;
   background-position: center bottom;
   background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+@media only screen and (min-width: 540px) {
+  .restos__cards--img4 {
+    background-position: center 60%;
+  }
 }
 .restos__cards a {
   text-decoration: none;
@@ -230,7 +275,8 @@
 }
 @media only screen and (min-width: 783px) {
   .container {
-    /*padding-bottom: 100px;*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -239,7 +285,6 @@
   grid-template-columns: 1fr;
   grid-gap: 15px;
   padding-bottom: 45px;
-  /*opacity: 0; Permet de cacher le menu */
 }
 .menu__title {
   display: flex;
@@ -250,6 +295,11 @@
 @media only screen and (min-width: 320px) and (max-width: 337px) {
   .menu__title {
     font-size: 12px;
+  }
+}
+@media only screen and (min-width: 783px) {
+  .menu__title {
+    grid-column: 1/span 3;
   }
 }
 .menu__title span, .menu__title i {
@@ -283,11 +333,15 @@
   width: 13%;
   border-bottom: 3px solid #99E2D0;
 }
+@media only screen and (min-width: 783px) {
+  .menu h2 {
+    width: 8%;
+  }
+}
 .menu__cards {
   background: white;
   border-radius: 15px;
   padding: 0 24px;
-  /* A modif */
   box-shadow: 0 7px 1px #EAE8E8;
   box-sizing: border-box;
   position: relative;
@@ -311,15 +365,24 @@
     width: 100%;
   }
 }
+.menu__cards:hover .menu__cards--check {
+  width: 35px;
+  opacity: 1;
+  z-index: 1;
+}
+.menu__cards:hover .menu__cards--check i {
+  transform: rotate(360deg) translateZ(0);
+}
+.menu__cards:hover .menu__cards--price span {
+  left: 0px;
+  margin-right: 0px;
+}
 .menu__cards h3, .menu__cards p {
-  /* A modif peut-être */
-  /* margin: 0 0 2% 0;*/
   margin: 0;
   width: 190px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Media queries à rajouter */
 }
 @media only screen and (min-width: 320px) and (max-width: 337px) {
   .menu__cards h3, .menu__cards p {
@@ -342,7 +405,6 @@
   padding: 38px 0 10px;
   text-align: center;
   left: 45px;
-  /*top: 49px;*/
   opacity: 1;
   margin-right: 10px;
   font-weight: bold;
@@ -379,20 +441,6 @@
   transition: transform 1s;
 }
 
-.menu__cards:hover .menu__cards--check {
-  width: 35px;
-  opacity: 1;
-  z-index: 1;
-}
-.menu__cards:hover .menu__cards--check i {
-  transform: rotate(360deg) translateZ(0);
-}
-
-.menu__cards:hover .menu__cards--price span {
-  left: 0px;
-  margin-right: 0px;
-}
-
 header {
   width: 100%;
   margin: 0;
@@ -419,11 +467,15 @@ header span {
 
 footer {
   position: relative;
-  /*top: 800px; en attente ********************************************/
   width: 100%;
   margin: 0;
   padding: 0;
   height: 100%;
+}
+@media only screen and (min-width: 783px) {
+  footer {
+    top: 0;
+  }
 }
 footer .infos {
   background: #2C2B2C;
@@ -440,7 +492,15 @@ footer .infos ul {
   padding: 0;
   list-style-type: none;
   width: 100%;
-  /******* Mettre 20% pour le responsive ********/
+}
+@media only screen and (min-width: 783px) {
+  footer .infos ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 footer .infos ul a {
   text-decoration: none;
@@ -454,17 +514,6 @@ footer .infos .fa-hands-helping {
   padding-right: 10px;
   font-size: 12px;
   rotate: -10deg;
-}
-@media only screen and (min-width: 783px) {
-  footer {
-    top: 0;
-  }
-  footer .infos ul {
-    /*width: 30%;*/
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
 }
 
 .banniere {
@@ -494,32 +543,22 @@ footer .infos .fa-hands-helping {
   }
 }
 
-.lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
+.loading {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  animation: loading 3000ms;
+}
+.loading__centrage {
+  text-align: center;
+  position: relative;
+  top: 30%;
 }
 
-.lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .btn {
   display: flex;
   justify-content: center;
@@ -558,223 +597,225 @@ footer .infos .fa-hands-helping {
   }
 }
 .menu__cards--1 {
-  animation: anim 2s linear 0.1s forwards;
+  animation: anim 500ms linear 0.1s forwards;
 }
 
 .menu__cards--2 {
-  animation: anim 4s linear 0.1s forwards;
+  animation: anim 1000ms linear 0.1s forwards;
 }
 
 .menu__cards--3 {
-  animation: anim 6s linear 0.1s forwards;
+  animation: anim 1500ms linear 0.1s forwards;
 }
 
 .menu__cards--4 {
-  animation: anim 8s linear 0.1s forwards;
+  animation: anim 2000ms linear 0.1s forwards;
 }
 
 .menu__cards--5 {
-  animation: anim 10s linear 0.1s forwards;
+  animation: anim 2500ms linear 0.1s forwards;
 }
 
 .menu__cards--6 {
-  animation: anim 12s linear 0.1s forwards;
+  animation: anim 3000ms linear 0.1s forwards;
 }
 
 .menu__cards--7 {
-  animation: anim 14s linear 0.1s forwards;
+  animation: anim 3500ms linear 0.1s forwards;
 }
 
 .menu__cards--8 {
-  animation: anim 16s linear 0.1s forwards;
+  animation: anim 4000ms linear 0.1s forwards;
 }
 
 .menu__cards--9 {
-  animation: anim 18s linear 0.1s forwards;
+  animation: anim 4500ms linear 0.1s forwards;
 }
 
 .menu__cards--10 {
-  animation: anim 20s linear 0.1s forwards;
+  animation: anim 5000ms linear 0.1s forwards;
 }
 
 .menu__cards--11 {
-  animation: anim 22s linear 0.1s forwards;
+  animation: anim 5500ms linear 0.1s forwards;
 }
 
 .menu__cards--12 {
-  animation: anim 24s linear 0.1s forwards;
+  animation: anim 6000ms linear 0.1s forwards;
 }
 
 .menu__cards--13 {
-  animation: anim 26s linear 0.1s forwards;
+  animation: anim 6500ms linear 0.1s forwards;
 }
 
 .menu__cards--14 {
-  animation: anim 28s linear 0.1s forwards;
+  animation: anim 7000ms linear 0.1s forwards;
 }
 
 .menu__cards--15 {
-  animation: anim 30s linear 0.1s forwards;
+  animation: anim 7500ms linear 0.1s forwards;
 }
 
 .menu__cards--16 {
-  animation: anim 32s linear 0.1s forwards;
+  animation: anim 8000ms linear 0.1s forwards;
 }
 
 .menu__cards--17 {
-  animation: anim 34s linear 0.1s forwards;
+  animation: anim 8500ms linear 0.1s forwards;
 }
 
 .menu__cards--18 {
-  animation: anim 36s linear 0.1s forwards;
+  animation: anim 9000ms linear 0.1s forwards;
 }
 
 .menu__cards--19 {
-  animation: anim 38s linear 0.1s forwards;
+  animation: anim 9500ms linear 0.1s forwards;
 }
 
 .menu__cards--20 {
-  animation: anim 40s linear 0.1s forwards;
+  animation: anim 10000ms linear 0.1s forwards;
 }
 
 .menu__cards--21 {
-  animation: anim 42s linear 0.1s forwards;
+  animation: anim 10500ms linear 0.1s forwards;
 }
 
 .menu__cards--22 {
-  animation: anim 44s linear 0.1s forwards;
+  animation: anim 11000ms linear 0.1s forwards;
 }
 
 .menu__cards--23 {
-  animation: anim 46s linear 0.1s forwards;
+  animation: anim 11500ms linear 0.1s forwards;
 }
 
 .menu__cards--24 {
-  animation: anim 48s linear 0.1s forwards;
+  animation: anim 12000ms linear 0.1s forwards;
 }
 
 .menu__cards--25 {
-  animation: anim 50s linear 0.1s forwards;
+  animation: anim 12500ms linear 0.1s forwards;
 }
 
 .menu__cards--26 {
-  animation: anim 52s linear 0.1s forwards;
+  animation: anim 13000ms linear 0.1s forwards;
 }
 
 .menu__cards--27 {
-  animation: anim 54s linear 0.1s forwards;
+  animation: anim 13500ms linear 0.1s forwards;
 }
 
 .menu__cards--28 {
-  animation: anim 56s linear 0.1s forwards;
+  animation: anim 14000ms linear 0.1s forwards;
 }
 
 .menu__cards--29 {
-  animation: anim 58s linear 0.1s forwards;
+  animation: anim 14500ms linear 0.1s forwards;
 }
 
 .menu__cards--30 {
-  animation: anim 60s linear 0.1s forwards;
+  animation: anim 15000ms linear 0.1s forwards;
 }
 
 .menu__cards--31 {
-  animation: anim 62s linear 0.1s forwards;
+  animation: anim 15500ms linear 0.1s forwards;
 }
 
 .menu__cards--32 {
-  animation: anim 64s linear 0.1s forwards;
+  animation: anim 16000ms linear 0.1s forwards;
 }
 
 .menu__cards--33 {
-  animation: anim 66s linear 0.1s forwards;
+  animation: anim 16500ms linear 0.1s forwards;
 }
 
 .menu__cards--34 {
-  animation: anim 68s linear 0.1s forwards;
+  animation: anim 17000ms linear 0.1s forwards;
 }
 
 .menu__cards--35 {
-  animation: anim 70s linear 0.1s forwards;
+  animation: anim 17500ms linear 0.1s forwards;
 }
 
 .menu__cards--36 {
-  animation: anim 72s linear 0.1s forwards;
+  animation: anim 18000ms linear 0.1s forwards;
 }
 
 .menu__cards--37 {
-  animation: anim 74s linear 0.1s forwards;
+  animation: anim 18500ms linear 0.1s forwards;
 }
 
 .menu__cards--38 {
-  animation: anim 76s linear 0.1s forwards;
+  animation: anim 19000ms linear 0.1s forwards;
 }
 
 .menu__cards--39 {
-  animation: anim 78s linear 0.1s forwards;
+  animation: anim 19500ms linear 0.1s forwards;
 }
 
 .menu__cards--40 {
-  animation: anim 80s linear 0.1s forwards;
+  animation: anim 20000ms linear 0.1s forwards;
 }
 
 .menu__cards--41 {
-  animation: anim 82s linear 0.1s forwards;
+  animation: anim 20500ms linear 0.1s forwards;
 }
 
 .menu__cards--42 {
-  animation: anim 84s linear 0.1s forwards;
+  animation: anim 21000ms linear 0.1s forwards;
 }
 
 .menu__cards--43 {
-  animation: anim 86s linear 0.1s forwards;
+  animation: anim 21500ms linear 0.1s forwards;
 }
 
 .menu__cards--44 {
-  animation: anim 88s linear 0.1s forwards;
+  animation: anim 22000ms linear 0.1s forwards;
 }
 
 .menu__cards--45 {
-  animation: anim 90s linear 0.1s forwards;
+  animation: anim 22500ms linear 0.1s forwards;
 }
 
 .menu__cards--46 {
-  animation: anim 92s linear 0.1s forwards;
+  animation: anim 23000ms linear 0.1s forwards;
 }
 
 .menu__cards--47 {
-  animation: anim 94s linear 0.1s forwards;
+  animation: anim 23500ms linear 0.1s forwards;
 }
 
 .menu__cards--48 {
-  animation: anim 96s linear 0.1s forwards;
+  animation: anim 24000ms linear 0.1s forwards;
 }
 
 .menu__cards--49 {
-  animation: anim 98s linear 0.1s forwards;
+  animation: anim 24500ms linear 0.1s forwards;
 }
 
 .menu__cards--50 {
-  animation: anim 100s linear 0.1s forwards;
+  animation: anim 25000ms linear 0.1s forwards;
 }
 
-.menu__met--1 {
-  /* Penser à modif la class sur les autres pg */
-  opacity: 0;
-  animation: anim 3s 1.6s linear forwards;
+@keyframes fill {
+  from {
+    top: 150px;
+    transform: translate(-50%) rotate(0deg);
+  }
+  to {
+    top: 100px;
+    transform: translateX(-50%) rotate(360deg);
+  }
 }
-
-.menu__met--2 {
-  /* Penser à modif la class sur les autres pg */
-  opacity: 0;
-  animation: anim 6s 1.6s linear forwards;
+@keyframes loading {
+  0% {
+    opacity: 1;
+    z-index: 1000;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
 }
-
-.menu__met--3 {
-  /* Penser à modif la class sur les autres pg */
-  opacity: 0;
-  animation: anim 9s 1.6s linear forwards;
-}
-
 main {
   min-width: 320px;
   width: 100%;
@@ -791,59 +832,5 @@ body {
 h4, .title {
   font-family: "Shrikhand", sans serif;
 }
-
-/**********************************************************************************************************************/
-/**********************************************************************************************************************/
-/**********************************************************************************************************************/
-/* Responsive */
-/**********************************************************************************************************************/
-/**********************************************************************************************************************/
-/**********************************************************************************************************************/
-/***************************** Tablet ***************************/
-@media only screen and (min-width: 783px) {
-  /*** Page accueil ***/
-  .help {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-  }
-  .help h2 {
-    grid-column: 1/span 3;
-  }
-
-  .restos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;
-  }
-  .restos h2 {
-    grid-column: 1/span 2;
-  }
-
-  .infos {
-    /* a centrer */
-  }
-  .infos ul {
-    /* A revoir */
-    width: 150%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  /*** Page menu ***/
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .menu h2 {
-    width: 8%;
-  }
-
-  .menu__title {
-    grid-column: 1/span 3;
-  }
-}
-/***************************** Desktop ***************************/
 
 /*# sourceMappingURL=style.css.map */

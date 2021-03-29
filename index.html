@@ -15,12 +15,15 @@
 </head>
 	<body>
         <!-- Le loading spinner -->
-        <div class="box">
-            <p>Un apéro ?</p>
-          </div> 
-
-         </div>
         <div class="loading">
+            <!--<div class="box"></div>-->
+            <div class="loading__centrage">
+	            <img src="images/spinner/pacman.gif" alt="pacman loading spinner">
+	            <p>Chargement en cours</p>
+            </div>   
+        </div>
+
+        <div class="page">
             <header>
                 <div class="header__logo">
                     <img src="images/logo/ohmyfood.png" alt="logo oh my food">
@@ -31,13 +34,13 @@
                 <section class="search">
                     <div class="search__txt">
                         <span class="fa fa-map-marker" aria-hidden="true"></span>
-                        <input placeholder="Paris, Belleville"></input>
+                        <input placeholder="Paris, Belleville">
                     </div>
 
                     <div class="search__txt--presentation">
                         <h1>Réservez le menu qui vous convient</h1>
                         <p>Découvrez des restaurants d'exception, sélectionner par nos soins.</p>
-                        <button><a href="#restaurants">Explorer nos restaurants</a></button>
+                        <a href="#restaurants"><div class="search__txt--presentation-button">Explorer nos restaurants</div></a>
                     </div>
                 </section>
 

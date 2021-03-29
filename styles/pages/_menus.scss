@@ -2,7 +2,6 @@
     background-color: $lightgrey;
 }
 
-
 .container {
     box-sizing: border-box;
     background: $lightgrey;
@@ -14,7 +13,8 @@
     grid-template-columns: 1fr;
     gap: 15px;
     @media only screen and (min-width: 783px) {
-        /*padding-bottom: 100px;*/
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -23,13 +23,15 @@
     grid-template-columns: 1fr;
     grid-gap: 15px;
     padding-bottom: 45px;
-    /*opacity: 0; Permet de cacher le menu */
     &__title {
         @include centrage;
-        justify-content: space-between;
-        font-size: 14px;
+            justify-content: space-between;
+            font-size: 14px;
         @media only screen and (min-width: 320px) and (max-width: 337px) {
-         font-size: 12px;
+            font-size: 12px;
+        }
+        @media only screen and (min-width: 783px) {
+            grid-column: 1 / span 3;
         }
         span, i {
             font-size: 25px;
@@ -62,11 +64,14 @@
         margin: 0;
         width: 13%;
         border-bottom: 3px solid $colorTertiary;
+        @media only screen and (min-width: 783px) {
+            width: 8%;
+        }
     }
     &__cards {
         background: white;
         border-radius: 15px;
-        padding: 0 24px;/* A modif */
+        padding: 0 24px;
         box-shadow: $shadow; 
         box-sizing: border-box;
         position: relative;
@@ -85,13 +90,26 @@
         @media only screen and (min-width: 783px) and (max-width: 1087px) {
            width: 100%;
         }
-        h3, p { /* A modif peut-être */
-           /* margin: 0 0 2% 0;*/
+        &:hover .menu__cards--check {
+            width: 35px;
+            opacity: 1;
+            z-index: 1;
+            i {
+                transform: rotate(360deg) translateZ(0);
+            }
+        }
+        &:hover .menu__cards--price {
+            span {
+                left: 0px;
+                margin-right: 0px;
+            }
+        }
+        h3, p { 
             margin: 0;
             width: 190px;
             white-space: nowrap; 
             overflow: hidden;
-            text-overflow: ellipsis;  /* Media queries à rajouter */
+            text-overflow: ellipsis;
             @media only screen and (min-width: 320px) and (max-width: 337px) {
                 font-size: 14px;
                 width: 150px;
@@ -109,7 +127,6 @@
                 padding: 38px 0 10px;
                 text-align: center;
                 left: 45px;
-                /*top: 49px;*/
                 opacity: 1;
                 margin-right: 10px;
                 font-weight: bold;
@@ -143,18 +160,6 @@
         }        
     }
 }
-.menu__cards:hover .menu__cards--check {
-    width: 35px;
-    opacity: 1;
-    z-index: 1;
-    i {
-        transform: rotate(360deg) translateZ(0);
-    }
-}
-.menu__cards:hover .menu__cards--price {
-    span {
-        left: 0px;
-        margin-right: 0px;
-    }
-}
+
+
 

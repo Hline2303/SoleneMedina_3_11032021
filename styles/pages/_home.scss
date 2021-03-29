@@ -1,24 +1,29 @@
+.page {
+    background-color: white;
+    /*animation: apparition 0.3s 3000ms;*/
+}
 .search {
     text-align: center;
     font-size: 16px;
+    max-width: 1400px;
+    margin: auto;
     &__txt {
     @include centrage;
     justify-content: center;
+    text-align: center;
     background-color: $mediumgrey;
     box-sizing: border-box;
     padding: 16px;
     }
     &__txt span {
-        text-align: center;
+    
+        margin-left: 60px;
         color: rgb(78, 78, 78);
     }
     &__txt input {
         margin-left: 2px;
-        padding: 5px 14px 0 0;
-        width: 40%;
+        padding: 5px 14px 0 20px;
         background-color: $mediumgrey;
-        text-align: center;
-        vertical-align: middle;
         font-weight: 800;
         border: none;
     }
@@ -29,24 +34,35 @@
     &__txt--presentation {
         background-color: $lightgrey;
         padding: 16px 16px 38px;
-        & button {
+        &-button {
         @include btn;
+        margin-left: auto;
+        margin-right: auto;
         &:hover {
         cursor: pointer;
         background: $gradientLight;
         box-shadow: $shadowDarken;
         }
+        }
         & a {
             text-decoration: none;
             color: white;
-        }
         }
     }
 }
 
 .help {
     padding: 12px;
-    margin-bottom: 44px;
+    margin: auto;
+    max-width: 1400px;
+    @media only screen and (min-width: 783px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+            & h2 {
+                grid-column: 1 / span 3;
+            }
+        }
     &__cards {
         @include centrage;
         flex-wrap: wrap;
@@ -78,7 +94,6 @@
         box-shadow: $shadow;
         }
         &--bg:hover {
-            background: #DBB8D5; 
             cursor: pointer;
             span {
             color: $colorPrimary;
@@ -95,6 +110,16 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    @media only screen and (min-width: 783px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 1fr;
+        & h2 {
+            grid-column: 1 / span 2;
+        }
+    }
     h2 {
         margin: 27px 0 0;
     }
@@ -104,13 +129,17 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        background-size: cover;
         &--img1 { 
             @include card;
             background-position: center bottom;
             background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+            @media only screen and (min-width: 540px) {
+                background-position: center 60%;
+            }        
             & span {
                 @include new;    
-            }
+            }            
         }
         &--img2 {
             @include card;
@@ -124,11 +153,20 @@
             @include card;
             background-position: center bottom;
             background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+            @media only screen and (min-width: 540px) {
+                background-position: center 60%;
+            }
+            @media only screen and (min-width: 1024px) {
+                background-position: center 70%;
+            }
             }
         &--img4 {
             @include card;
             background-position: center bottom;
             background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+            @media only screen and (min-width: 540px) {
+                background-position: center 60%;
+            }
             }        
     a {
         text-decoration: none;
