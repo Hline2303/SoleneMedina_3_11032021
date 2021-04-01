@@ -118,6 +118,14 @@
                 font-size: 14px;
                 width: 95px;
             }
+            @media only screen and (min-width: 600px) and (max-width: 782px) {
+                width: 267px;
+                overflow: visible;
+            }
+            @media only screen and (min-width: 1000px) {
+                width: 267px;
+                overflow: visible;
+            }
         }
         &--price {
             display: flex;
