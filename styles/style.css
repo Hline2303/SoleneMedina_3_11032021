@@ -513,7 +513,6 @@ footer .infos .fa-utensils {
 footer .infos .fa-hands-helping {
   padding-right: 10px;
   font-size: 12px;
-  rotate: -10deg;
 }
 
 .banniere {
@@ -523,16 +522,16 @@ footer .infos .fa-hands-helping {
   background-size: cover;
 }
 .banniere__1 {
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-image: url(../images/restaurants/la-palette-du-gout.jpg);
 }
 .banniere__2 {
-  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+  background-image: url(../images/restaurants/la-note-enchantee.jpg);
 }
 .banniere__3 {
-  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+  background-image: url(../images/restaurants/a-la-francaise.jpg);
 }
 .banniere__4 {
-  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+  background-image: url(../images/restaurants/le-delice-des-sens.jpg);
 }
 @media only screen and (min-width: 783px) {
   .banniere {
@@ -826,11 +825,11 @@ main {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h4, .title {
-  font-family: "Shrikhand", sans serif;
+  font-family: "Shrikhand", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
